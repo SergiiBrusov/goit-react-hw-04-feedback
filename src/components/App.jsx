@@ -10,12 +10,18 @@ export function App() {
   const [bad, setBad] = useState(0);
 
   const onLeaveFeedback = type => {
-    if (type === 'good') {
-      setGood(good + 1);
-    } else if (type === 'neutral') {
-      setNeutral(neutral + 1);
-    } else if (type === 'bad') {
-      setBad(bad + 1);
+    switch (type) {
+      case 'good':
+        setGood(good + 1);
+        break;
+      case 'neutral':
+        setNeutral(neutral + 1);
+        break;
+      case 'bad':
+        setBad(bad + 1);
+        break;
+      default:
+        break;
     }
   };
 
